@@ -4,7 +4,7 @@ import requests
 
 
 movies = pickle.load(open('movies_con.pkl','rb'))
-similarity_con = pickle.load((open('similarity_con.pkl','rb')))
+similarity_con = pickle.load((open('similarity_cont.pkl','rb')))
 
 
 def fetch_poster(movie_id):
