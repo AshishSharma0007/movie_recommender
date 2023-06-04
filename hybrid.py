@@ -3,7 +3,6 @@ import pickle
 import pandas as pd
 import requests
 import numpy as np
-import pandas.core.indexes.numeric as pd
 
 movies_dict_con = pickle.load(open('movies_cont.pkl','rb'))
 movies_con = pd.DataFrame(movies_dict_con)
