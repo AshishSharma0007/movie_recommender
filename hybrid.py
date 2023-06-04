@@ -3,6 +3,7 @@ import pickle
 import pandas as pd
 import requests
 import numpy as np
+import streamlit.components.v1 as components
 
 movies_dict_con = pickle.load(open('movies_cont.pkl','rb'))
 movies_con = pd.DataFrame(movies_dict_con)
@@ -51,10 +52,24 @@ def recommend_col(name):
         poster_list.append(y)
     return movies_list,poster_list
 
-
-
 st.set_page_config(layout="wide")
-st.title("Movies Recommender System")
+
+def add_bg_from_url():
+    st.markdown(
+         f"""
+         <style>
+         .stApp {{
+             background-image: url("https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+             background-attachment: fixed;
+             background-size: cover
+         }}
+         </style>
+         """,
+         unsafe_allow_html=True
+     )
+add_bg_from_url() 
+
+st.title('_Movies Recommender System_')
 selected = st.selectbox('Select any one movie for Recommendations:',movies_con['title'].values)
 names = []
 posters = []
